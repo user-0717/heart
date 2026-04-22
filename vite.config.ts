@@ -25,6 +25,7 @@ export default defineConfig({
     tsconfigPaths(),
   ],
   server: {
+    host: true, // 监听所有网络接口
     proxy: {
       '/api': {
         target: 'http://localhost:3001',
