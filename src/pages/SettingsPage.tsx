@@ -22,7 +22,8 @@ export function SettingsPage() {
   } = useSettingsStore();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type, checked } = e.target;
+    const target = e.target as HTMLInputElement;
+    const { name, value, type, checked } = target;
     updateSettings({ [name]: type === 'checkbox' ? checked : value });
   };
 
